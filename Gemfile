@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-
+gem 'coffee-script-source', '1.8.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'cancan'
@@ -34,6 +34,7 @@ gem 'cancan'
 gem 'devise'
 gem 'pry'
 gem 'pry-nav'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
