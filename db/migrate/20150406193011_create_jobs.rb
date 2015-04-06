@@ -1,6 +1,6 @@
-class CreateSlujbes < ActiveRecord::Migration
+class CreateJobs < ActiveRecord::Migration
   def change
-    create_table :slujbes do |t|
+    create_table :jobs do |t|
       t.integer :nivel_cariera
       t.text :descriere
       t.text :competente_obligatorii

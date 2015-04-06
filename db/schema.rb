@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406192305) do
+ActiveRecord::Schema.define(version: 20150406193011) do
 
   create_table "companies", force: true do |t|
     t.integer  "numar_angajati"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20150406192305) do
   add_index "installs", ["email"], name: "index_installs_on_email", unique: true
   add_index "installs", ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
 
-  create_table "slujbes", force: true do |t|
+  create_table "jobs", force: true do |t|
     t.integer  "nivel_cariera"
     t.text     "descriere"
     t.text     "competente_obligatorii"

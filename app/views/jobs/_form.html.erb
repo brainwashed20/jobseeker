@@ -1,10 +1,10 @@
-<%= form_for(@slujbe) do |f| %>
-  <% if @slujbe.errors.any? %>
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@slujbe.errors.count, "error") %> prohibited this slujbe from being saved:</h2>
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
 
       <ul>
-      <% @slujbe.errors.full_messages.each do |message| %>
+      <% @job.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
