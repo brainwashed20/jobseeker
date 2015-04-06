@@ -1,15 +1,17 @@
 class UserAccountsController < ApplicationController
   before_action :set_user_account, only: [:show, :edit, :update, :destroy]
-
   respond_to :html
 
   def index
-    @user_accounts = UserAccount.all
-    respond_with(@user_accounts)
+    if current_user.is_admin?
+      @user_accounts = UserAccount.all
+      respond_with(@user_accounts)
+    else
+      redirect_to user_account_url(current_user.user_account.id)
+    end
   end
 
   def show
-    binding.pry
     respond_with(@user_account)
   end
 
