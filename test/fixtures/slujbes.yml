@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nivel_cariera: 1
+  descriere: MyText
+  competente_obligatorii: MyText
+  competente_optionale: MyText
+  beneficii: MyText
+
+two:
+  nivel_cariera: 1
+  descriere: MyText
+  competente_obligatorii: MyText
+  competente_optionale: MyText
+  beneficii: MyText

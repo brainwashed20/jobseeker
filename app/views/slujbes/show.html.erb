@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nivel cariera:</strong>
+  <%= @slujbe.nivel_cariera %>
+</p>
+
+<p>
+  <strong>Descriere:</strong>
+  <%= @slujbe.descriere %>
+</p>
+
+<p>
+  <strong>Competente obligatorii:</strong>
+  <%= @slujbe.competente_obligatorii %>
+</p>
+
+<p>
+  <strong>Competente optionale:</strong>
+  <%= @slujbe.competente_optionale %>
+</p>
+
+<p>
+  <strong>Beneficii:</strong>
+  <%= @slujbe.beneficii %>
+</p>
+
+<%= link_to 'Edit', edit_slujbe_path(@slujbe) %> |
+<%= link_to 'Back', slujbes_path %>

@@ -1,0 +1,37 @@
+<%= form_for(@slujbe) do |f| %>
+  <% if @slujbe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@slujbe.errors.count, "error") %> prohibited this slujbe from being saved:</h2>
+
+      <ul>
+      <% @slujbe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nivel_cariera %><br>
+    <%= f.number_field :nivel_cariera %>
+  </div>
+  <div class="field">
+    <%= f.label :descriere %><br>
+    <%= f.text_area :descriere %>
+  </div>
+  <div class="field">
+    <%= f.label :competente_obligatorii %><br>
+    <%= f.text_area :competente_obligatorii %>
+  </div>
+  <div class="field">
+    <%= f.label :competente_optionale %><br>
+    <%= f.text_area :competente_optionale %>
+  </div>
+  <div class="field">
+    <%= f.label :beneficii %><br>
+    <%= f.text_area :beneficii %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

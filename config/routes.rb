@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :slujbes
+
   devise_for :users, :controllers => { :registrations => "registrations" }
   devise_for :installs
   # The priority is based upon order of creation: first created -> highest priority.
