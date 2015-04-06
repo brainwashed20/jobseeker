@@ -4,8 +4,12 @@ class CompaniesController < ApplicationController
   respond_to :html
 
   def index
-    @companies = Company.all
-    respond_with(@companies)
+    if current_user.is_admin?
+      @companies = Company.all
+      respond_with(@companies)
+    else
+      redirect_to company_url(current_user.company.id)
+    end
   end
 
   def show

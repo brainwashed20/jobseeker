@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406193011) do
+ActiveRecord::Schema.define(version: 20150406201016) do
 
   create_table "companies", force: true do |t|
     t.integer  "numar_angajati"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 20150406193011) do
     t.string   "adresa_contact"
     t.string   "nume"
     t.string   "poza"
+  end
+
+  create_table "companies_locations", force: true do |t|
+    t.integer "company_id"
+    t.integer "location_id"
   end
 
   create_table "domains", force: true do |t|
@@ -55,6 +60,14 @@ ActiveRecord::Schema.define(version: 20150406193011) do
     t.text     "competente_obligatorii"
     t.text     "competente_optionale"
     t.text     "beneficii"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "company_id"
+  end
+
+  create_table "locations", force: true do |t|
+    t.string   "tara"
+    t.string   "oras"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

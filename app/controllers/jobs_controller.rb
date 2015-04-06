@@ -4,8 +4,12 @@ class JobsController < ApplicationController
   respond_to :html
 
   def index
-    @jobs = Job.all
-    respond_with(@jobs)
+    if current_user.is_company?
+      @jobs = Job.where(company_id: current_user.company.id)
+      respond_with(@jobs)
+    else
+      redirect_to root_path
+    end
   end
 
   def show
@@ -22,6 +26,7 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
+    @job.company = current_user.company
     @job.save
     respond_with(@job)
   end

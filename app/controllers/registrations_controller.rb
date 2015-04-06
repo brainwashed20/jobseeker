@@ -2,7 +2,6 @@ class RegistrationsController < Devise::RegistrationsController
 	protected
 
 	def after_sign_up_path_for(resource)
-		binding.pry
 		if params[:is_company] == "yes"
 			current_user.update(:is_company => "true")
 			'/companies/new'
@@ -10,4 +9,4 @@ class RegistrationsController < Devise::RegistrationsController
 			'/user_accounts/new'
 		end
 	end
-end
+end	

@@ -12,9 +12,15 @@
 			<li> <%=link_to "Home", root_path %></li>
 			<% if user_signed_in? %>
 				<% if current_user.is_company? %>
-					<li> <%=link_to "Company Profile", company_path(current_user.company) %></li>
+					<% if current_user.company.present? %>
+						<li> <%=link_to "Company Profile", company_path(current_user.company) %></li>
+						<li> <%=link_to "Add Job", new_job_path %> </li>
+						<li> <%= link_to "See jobs", jobs_path %></li>
+					<% end %>
 				<% else %>
-					<li> <%=link_to "Profile", user_account_path(current_user.user_account) %></li>
+					<% if current_user.user_account.present? %>
+						li> <%=link_to "Profile", user_account_path(current_user.user_account) %></li>
+					<% end %>
 				<% end %>
 			<% end %>
 			<% if user_signed_in? %>
