@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numar angajati:</strong>
+  <%= @company.numar_angajati %>
+</p>
+
+<p>
+  <strong>Pagina web:</strong>
+  <%= @company.pagina_web %>
+</p>
+
+<p>
+  <strong>Descriere:</strong>
+  <%= @company.descriere %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>

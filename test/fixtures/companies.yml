@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numar_angajati: 1
+  pagina_web: MyString
+  descriere: MyText
+
+two:
+  numar_angajati: 1
+  pagina_web: MyString
+  descriere: MyText

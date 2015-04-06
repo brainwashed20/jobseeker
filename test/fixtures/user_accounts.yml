@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prenume: MyString
+  nume: MyString
+  data_nasterii: 2015-04-06
+
+two:
+  prenume: MyString
+  nume: MyString
+  data_nasterii: 2015-04-06
