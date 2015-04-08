@@ -1,14 +1,35 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <title>Jobseeker</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<title>JOB Portal</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="/style.css" />
+
 </head>
+
 <body>
-	<div id = 'menu' >
-		<ul>
+	<div class="meta">
+		<div class="metalinks">
+			<a href="#"><img src="/images/meta1.gif" alt="" width="15" height="14" /></a>
+			<a href="#"><img src="/images/meta2.gif" alt="" width="17" height="14" /></a>
+			<a href="#"><img src="/images/meta3.gif" alt="" width="17" height="14" /></a>
+			<a href="#"><img src="/images/meta4.gif" alt="" width="15" height="14" /></a>
+		</div>
+		<p>Welcome! 
+		<% if user_signed_in? %>
+			<%=link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+		<% else%>
+			<%=link_to "Login", new_user_session_path %>
+			or
+			<%=link_to "Register", new_user_registration_path %>
+		<%end%>
+		</p>	
+	</div>
+	<div id="header">
+		<%=link_to( image_tag("/images/logo.jpg"), root_path, class:"logo") %>
+		<span class="slogan">Your Key to Success</span>
+		<ul id="menu">
 			<li> <%=link_to "Home", root_path %></li>
 			<% if user_signed_in? %>
 				<% if current_user.is_company? %>
@@ -19,26 +40,23 @@
 					<% end %>
 				<% else %>
 					<% if current_user.user_account.present? %>
-						li> <%=link_to "Profile", user_account_path(current_user.user_account) %></li>
+						<li> <%=link_to "Profile", user_account_path(current_user.user_account) %></li>
 					<% end %>
 				<% end %>
 			<% end %>
-			<% if user_signed_in? %>
-				<li> <%=link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-			<% else %>
-				<li> <%=link_to "Login", new_user_session_path %> </li>
-				<li> <%=link_to "Register", new_user_registration_path %> </li>
-			<% end %>
-
 		</ul>
+		<img src="/images/bigpicture.jpg" alt="" width="892" height="303" />
+			<% if notice %>
+				<p class = 'alert alert-succes' %><%= notice %></p>
+			<% end %>
+			<% if alert %>
+				<p class = 'alert alert-danger' %><%= notice %></p>
+			<% end %>
 	</div>
-	<% if notice %>
-		<p class = 'alert alert-succes' %><%= notice %></p>
-	<% end %>
-	<% if alert %>
-		<p class = 'alert alert-danger' %><%= notice %></p>
-	<% end %>
 	<%= yield %>
-
+	
+	<div id="footer">
+		Copyright &copy;. All rights reserved. Design by <a href="#">Team Rocket</a> 																																																						 
+	</div>
 </body>
 </html>
