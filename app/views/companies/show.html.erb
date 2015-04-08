@@ -1,6 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Nume:</strong>
+  <%= @company.nume %>
+</p>
+<p>
+  <strong>Poza:</strong>
+  <img src = "<%= @company.poza %>" />
+</p>
+<p>
+  <strong>Adresa de contact:</strong>
+  <%= @company.adresa_contact %>
+</p>
+<p>
   <strong>Numar angajati:</strong>
   <%= @company.numar_angajati %>
 </p>
